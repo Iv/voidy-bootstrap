@@ -1,13 +1,13 @@
 {% extends "index.html" %}
-{% block title %}Author:{{ author }} - {{ SITENAME }}{% endblock %}
-{% block metadesc %}{{ SITETAGALT }} Posts by author {{ author }}{% endblock %}
+{% block title %}Автор:{{ author }} - {{ SITENAME }}{% endblock %}
+{% block metadesc %}{{ SITETAGALT }} Записи автора {{ author }}{% endblock %}
 
 
 {% block content_header %}
 <ol class="breadcrumb">
     <li><a href="{{ SITEURL }}/" title="Home" rel="home">
 		<i class="fa fa-home fa-fw fa-lg"></i> </a></li>
-    <li>Authors </li>
+    <li>Авторы </li>
     <li class="active">{{ author }}</li>
 </ol>
 {% endblock %}
