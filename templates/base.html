@@ -30,7 +30,8 @@
 	{% else %}
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
     {% endif %}
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-lightbox/0.7.0/bootstrap-lightbox.css" />
     {% if STYLESHEETS %}	
       {% for css in STYLESHEETS %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
@@ -141,7 +142,11 @@
     <!-- javascript -->
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-lightbox/0.7.0/bootstrap-lightbox.js"></script>
     {% block scripts %}
     {% endblock %}
+    <script>
+       $('a.lb').lightbox();
+    </script>
   </body>
 </html>
