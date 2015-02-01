@@ -2,16 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-<<<<<<< HEAD
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{% block title %}{{ SITENAME }} - {{ SITETAG|escape }}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|escape }}{% endblock %}" />
-=======
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}" />
->>>>>>> robulouski/master
     <meta name="author" content="{{ AUTHOR }}" />
     <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
 	{% block meta_other %}{% endblock %}
@@ -51,6 +46,7 @@
       {% for css in STYLESHEETS %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
 	  {% endfor %}
+    {% endif %}
 
     {% for url in STYLESHEET_URLS %}
       <link rel="stylesheet" href="{{ url }}" />

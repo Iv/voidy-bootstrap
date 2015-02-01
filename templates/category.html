@@ -18,7 +18,6 @@
 {% if CUSTOM_CONTENT_TOP_CATEGORY %}
 {% include "includes/" + CUSTOM_CONTENT_TOP_CATEGORY %}
 {% endif %}
-
 <ol class="breadcrumb">
     <li><a href="{{ SITEURL }}/" title="Home" rel="home">
 		<i class="fa fa-home fa-fw fa-lg"></i> </a></li>
@@ -29,8 +28,6 @@
 {%endif%}
     <li class="active">{{ category }}</li>
 </ol>
-
-
 {% endblock content_header %}
 
 {% block article %}
