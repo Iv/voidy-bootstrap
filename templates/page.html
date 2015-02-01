@@ -4,7 +4,7 @@
 {% block open_graph %}
 {% if OPEN_GRAPH %}
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="{{ page.title }}"/>
+    <meta property="og:title" content="{{ page.title|striptags|e }}"/>
     <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
     {% if page.description %}
       <meta property="og:description" content="{{ page.description|striptags|e }}"/>
@@ -15,7 +15,21 @@
     {% endif %}
 {% endif %}
 {% endblock %}
-{% block content_body %}
+{% block custom_header %}
+{% if CUSTOM_HEADER_PAGE %}
+{% include "includes/" + CUSTOM_HEADER_PAGE %}
+{% endif %}
+{% endblock custom_header %}
+{% block container_header %}
+{% if CUSTOM_CONTAINER_TOP_PAGE %}
+{% include "includes/" + CUSTOM_CONTAINER_TOP_PAGE %}
+{% endif %}
+{% endblock container_header %}
+{% block content_header %}
+{% include "includes/" + CUSTOM_CONTENT_TOP_PAGE|default("page_top.html") ignore missing %}
+{% endblock content_header %}
+
+{% block    content_body %}
 <article itemscope="itemscope" 
          itemtype="http://schema.org/{{page.schema_type|default('WebPage') }}">
   <header>
@@ -30,5 +44,31 @@
     {% endif %}
     {{ page.content }}
   </div>
+
+  {% for file in CUSTOM_PAGE_FOOTERS %}
+    {% include "includes/" + file %}
+  {% endfor %}
+
 </article>
+{% endblock content_body %}
+
+{% block    content_footer %}
+{% if CUSTOM_CONTENT_BOTTOM_PAGE %}
+{% include "includes/" + CUSTOM_CONTENT_BOTTOM_PAGE %}
+{% endif %}
+{% endblock content_footer %}
+
+{% block    container_footer %}
+{% if CUSTOM_CONTAINER_BOTTOM_PAGE %}
+{% include "includes/" + CUSTOM_CONTAINER_BOTTOM_PAGE %}
+{% endif %}
+{% endblock container_footer %}
+
+{% block scripts %}
+  {% if CUSTOM_SCRIPTS_PAGE %}
+  {% include "includes/" + CUSTOM_SCRIPTS_PAGE %}
+  {% endif %}
+  {% if page.javascript %}
+    <script src="{{ SITEURL }}/theme/js/{{ page.javascript }}" ></script>
+  {% endif %}
 {% endblock %}

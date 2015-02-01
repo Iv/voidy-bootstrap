@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+{% block title %}{{ article.title|striptags|e }} - {{ SITENAME }}{% endblock %}
 {% block metadesc %}{{ article.description|e }}{% endblock %}
 {% block open_graph %}
 {% if OPEN_GRAPH %}
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="{{ article.title }}"/>
+    <meta property="og:title" content="{{ article.title|striptags|e }}"/>
     <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
     {% if article.description %}
       <meta property="og:description" content="{{ article.description|striptags|e }}"/>
@@ -28,8 +28,8 @@
 {% endif %}
 {% if TWITTER_CARD and TWITTER_USERNAME %}
     <meta name="twitter:card" content="summary"> 
-    <meta name="twitter:title" content="{{ article.title|striptags }}">
-    <meta name="twitter:description" content="{{ article.description|striptags }}">
+    <meta name="twitter:title" content="{{ article.title|striptags|e }}">
+    <meta name="twitter:description" content="{{ article.description|striptags|e }}">
     <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}">
     <meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}">
     <meta name="twitter:domain" content="{{ SITEURL }}">
@@ -39,14 +39,27 @@
     {% endif %}
 {% endif %}
 {% endblock %}
-{% block content_header %}
-  {% include "includes/article_top.html" ignore missing %}
+{% block custom_header %}
+{% if CUSTOM_HEADER_ARTICLE %}
+{% include "includes/" + CUSTOM_HEADER_ARTICLE %}
+{% endif %}
 {% endblock %}
-{% block content_body %}
+{% block container_header %}
+{% if CUSTOM_CONTAINER_TOP_ARTICLE %}
+{% include "includes/" + CUSTOM_CONTAINER_TOP_ARTICLE %}
+{% endif %}
+{% endblock container_header %}
+{% block content_header %}
+{% include "includes/" + CUSTOM_CONTENT_TOP_ARTICLE|default("article_top.html") ignore missing %}
+{% endblock content_header%}
+
+{% block    content_body %}
 <article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
-  <header>
-  {% if CUSTOM_ARTICLE_HEADER %}
-	{% include "includes/" + CUSTOM_ARTICLE_HEADER %}
+  <header class="article-header">
+  {% if CUSTOM_ARTICLE_HEADERS %}
+    {% for file in CUSTOM_ARTICLE_HEADERS %}
+	  {% include "includes/" + file %}
+    {% endfor %}
   {% else %}
 	{% include "includes/article_header.html" %}
   {% endif %}
@@ -59,15 +72,13 @@
       <img class="article-image img-responsive" alt="article header image" itemprop="image"
 		   src="{{ SITEURL }}/images/{{ article.image }}" />
     {% endif %}
+    {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
 	{{ article.content }}
   </div>
-
-  {% include "includes/article_end.html" ignore missing %}
-  <hr />
-  {% if CUSTOM_ARTICLE_SHARING %}
-    {% include "includes/" + CUSTOM_ARTICLE_SHARING  %}
-  {% endif %}
-  {% include "includes/article_bottom.html" ignore missing %}
+  
+  {% for file in CUSTOM_ARTICLE_FOOTERS %}
+    {% include "includes/" + file %}
+  {% endfor %}
 
   {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
   <div class="comments">
@@ -85,10 +96,22 @@
   </div>
   {% endif %}
 </article>
-{% endblock %}
+{% endblock content_body %}
+
+{% block    content_footer %}
+{% if CUSTOM_CONTENT_BOTTOM_ARTICLE %}
+{% include "includes/" + CUSTOM_CONTENT_BOTTOM_ARTICLE %}
+{% endif %}
+{% endblock content_footer %}
+
+{% block    container_footer %}
+{% if CUSTOM_CONTAINER_BOTTOM_ARTICLE %}
+{% include "includes/" + CUSTOM_CONTAINER_BOTTOM_ARTICLE %}
+{% endif %}
+{% endblock container_footer %}
 
 {% block scripts %}
-  {% if CUSTOM_ARTICLE_SCRIPTS %}
-    {% include "includes/" + CUSTOM_ARTICLE_SCRIPTS %}
-  {% endif %}
+{% if CUSTOM_SCRIPTS_ARTICLE %}
+{% include "includes/" + CUSTOM_SCRIPTS_ARTICLE %}
+{% endif %}
 {% endblock %}
