@@ -38,7 +38,7 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />  
     {% endif %}
 
-      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css" media="screen" />
     {% if STYLESHEETS %}	
       {% for css in STYLESHEETS %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
@@ -180,9 +180,9 @@
        $('a.lb').lightbox();
     </script>
     {% if not SKIP_DEFAULT_JS %}   
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     {% endif %}
 
     {% for url in JAVASCRIPT_URLS %}
@@ -191,7 +191,11 @@
     {% for js in JAVASCRIPT_FILES %}
     <script src="{{ SITEURL }}/theme/js/{{ js }}" ></script>
     {% endfor %}
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+    </script>
     {% block scripts %}
     {% endblock %}
     {% if CUSTOM_SCRIPTS_BASE %}
