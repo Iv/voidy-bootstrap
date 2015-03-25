@@ -27,7 +27,7 @@
     {% endif %}
 {% endif %}
 {% if TWITTER_CARD and TWITTER_USERNAME %}
-    <meta name="twitter:card" content="summary"> 
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ article.title|striptags|e }}">
     <meta name="twitter:description" content="{{ article.description|striptags|e }}">
     <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}">
@@ -54,12 +54,6 @@
 {% endblock content_header%}
 
 {% block    content_body %}
-<h2><a href="{{ SITEURL }}/pages/gallery.html#{{ article.album }}">{{ article.album }}</a></h2>
-    <ul>
-    {% for image in article.galleryimages %}
-    <li><a class="{{ article.album }} cboxElement" href="{{ SITEURL }}/static/images/gallery/{{ article.album }}/{{ image }}"><img src="{{ SITEURL }}/static/images/gallery200x200/{{ article.album }}/{{ image }}"></a></li>
-    {% endfor %}
-</ul>
 <article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
   <header class="article-header">
   {% if CUSTOM_ARTICLE_HEADERS %}
@@ -81,7 +75,7 @@
     {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
 	{{ article.content }}
   </div>
-  
+
   {% for file in CUSTOM_ARTICLE_FOOTERS %}
     {% include "includes/" + file %}
   {% endfor %}
