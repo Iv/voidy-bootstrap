@@ -1,9 +1,14 @@
-      <div class="summary">
-        {% if article.standfirst %}
-          <p class="standfirst">{{ article.standfirst|e }}</p>
-        {% endif %}
-		{{ article.summary }}
-		<p class="content-emphasis"><a href="{{ SITEURL }}/{{ article.url }}">
-			Read more... <i class="fa fa-arrow-circle-right fa-fw fa-lg"></i> 
-		</a></p>
-      </div>
+<div class="summary">
+    {% if article.standfirst %}
+    <p class="standfirst">{{ article.standfirst|e }}</p>
+    {% endif %}
+    {{ article.summary }}
+    {% if article.cover %}
+    <a class="fancybox center" href="{{ article.cover.img.XXXL.href }}" title="{{ article.cover.album_title }}"><img
+            alt="{{ article.cover.album_title }}" class="img-responsive article-cover"
+            src="{{ article.cover.img.XL.href }}"></a>
+    {% endif %}
+    <p class="content-emphasis"><a href="{{ SITEURL }}/{{ article.url }}">
+        Read more... <i class="fa fa-arrow-circle-right fa-fw fa-lg"></i>
+    </a></p>
+</div>
