@@ -4,8 +4,8 @@
     {% endif %}
     {{ article.summary }}
     {% if article.cover %}
-    <a class="fancybox center" href="{{ article.cover.img.XXXL.href }}" title="{{ article.cover.album_title }}"><img
-            alt="{{ article.cover.album_title }}" class="img-responsive article-cover"
+    <a class="center fancybox" href="{{ article.cover.img.XXXL.href }}" title='{{ article.cover.album_title }}'><img
+            alt='{{ article.cover.album_title }}' class="img-responsive article-cover"
             src="{{ article.cover.img.XL.href }}"></a>
     {% endif %}
     <p class="content-emphasis"><a href="{{ SITEURL }}/{{ article.url }}">
