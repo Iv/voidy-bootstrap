@@ -4,7 +4,17 @@ body, .navbar-default
     color: #EEE;
 }
 
+.navbar
+{
+    border: 0;
+}
+
 .jumbotron
 {
     background-color: #221767;
+}
+
+.content-body p img
+{
+    max-width: 100%;
 }
