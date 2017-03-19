@@ -1,0 +1,10 @@
+body, .navbar-default
+{
+    background-color: #0c024d;
+    color: #EEE;
+}
+
+.jumbotron
+{
+    background-color: #221767;
+}
