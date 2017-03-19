@@ -11,7 +11,8 @@ body, .navbar-default
 
 .jumbotron, #site-footer
 {
-    background-color: #1B0B7D;
+    background-color: #073677;
+    border: 0;
 }
 
 .content-body p img
