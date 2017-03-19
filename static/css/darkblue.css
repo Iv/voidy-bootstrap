@@ -9,9 +9,9 @@ body, .navbar-default
     border: 0;
 }
 
-.jumbotron
+.jumbotron, #site-footer
 {
-    background-color: #221767;
+    background-color: #1B0B7D;
 }
 
 .content-body p img
