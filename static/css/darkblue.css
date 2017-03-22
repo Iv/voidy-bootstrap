@@ -11,11 +11,17 @@ body, .navbar-default
 
 .jumbotron, #site-footer
 {
-    background-color: #073677;
+    background-color: #07002F;
     border: 0;
 }
 
 .content-body p img
 {
     max-width: 100%;
+}
+
+.pagination > li > a
+{
+    background-color: #07002F;
+    border: 1px solid #07002F;
 }
