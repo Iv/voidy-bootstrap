@@ -39,6 +39,11 @@ body, .navbar-default
     max-width: 100%;
 }
 
+hr
+{
+    border-top: 1px solid #23527c;
+}
+
 .pagination > li > a
 {
     background-color: #07002F;
