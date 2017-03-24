@@ -9,10 +9,29 @@ body, .navbar-default
     border: 0;
 }
 
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a
+{
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover
+{
+    color: #23527c;
+    text-decoration: underline;
+}
+
 .jumbotron, #site-footer
 {
     background-color: #07002F;
     border: 0;
+}
+
+.article-header-date, .article-header-info
+{
+    color: #3e6396;
 }
 
 .content-body p img
