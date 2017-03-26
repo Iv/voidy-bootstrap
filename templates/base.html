@@ -61,6 +61,16 @@
       <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
     {% endfor %}
 
+    {% if STYLE_COLOUR %}
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="{{ STYLE_COLOUR }}" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="{{ STYLE_COLOUR }}">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    {% endif %}
+
     <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON|default('favicon.ico') }}" />
     {% if CUSTOM_HTML_HEAD %}
     {% include "includes/" + CUSTOM_HTML_HEAD %}

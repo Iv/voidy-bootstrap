@@ -232,6 +232,10 @@ optional.
   additional stylesheets that should be pulled in by the ``base.html``
   template (after any STYLESHEET_URLS entries).
 
+``STYLE_COLOUR``
+  The main colour of the theme, to be hinted at supported browsers (mainly
+  mobile) so they can use it to colour their navigation chrome accordingly.
+
 ``SKIP_DEFAULT_CSS`` 
   No default CSS files at all will be used if this is set to True.  In this
   case the only stylesheets used will be those specified in
