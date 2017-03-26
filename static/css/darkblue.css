@@ -78,10 +78,11 @@ pre
         text-align: left;
     }
 
-    .article-header h1
+    .article-header-date
     {
         clear: both;
         padding-top: .5em;
+        display: block;
     }
 
 .pagination > li > a
