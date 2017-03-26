@@ -29,6 +29,17 @@ body, .navbar-default
     border: 0;
 }
 
+.breadcrumb
+{
+    background-color: inherit;
+    padding: 0;
+}
+
+    .breadcrumb > .active
+    {
+        color: #3e6396;
+    }
+
 .article-header-date, .article-header-info
 {
     color: #3e6396;
