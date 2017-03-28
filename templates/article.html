@@ -105,6 +105,15 @@
 	</script>
   </div>
   {% endif %}
+  {% if ISSO_URL and SITEURL and article.status != "draft" %}
+  <div class="comments">
+	<h2>Comments</h2>
+    <script data-isso="//{{ ISSO_URL }}/"
+        src="//{{ ISSO_URL }}/js/embed.min.js"></script>
+
+	<section id="isso-thread"></section>
+  </div>
+  {% endif %}
 </article>
 {% endblock content_body %}
 
