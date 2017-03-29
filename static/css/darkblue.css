@@ -102,3 +102,26 @@ pre
     background-color: #07002F;
     border: 1px solid #07002F;
 }
+
+/* isso commenting system styling */
+.comments h2
+{
+    color: #3e6396;
+}
+
+#isso-thread > h4
+{
+    color: #23527c !important;
+}
+
+.isso-postbox > .form-wrapper > .auth-section .post-action > input
+{
+    border: 1px solid #23527c !important;
+    background-color: #23527c !important;
+}
+
+.post-action > input:hover
+{
+    border: 1px solid #3e6396 !important;
+    background-color: #3e6396 !important;
+}
