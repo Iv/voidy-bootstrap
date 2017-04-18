@@ -1,0 +1,141 @@
+body, .navbar-default
+{
+    background-color: #0c024d;
+    color: #EEE;
+}
+
+a,
+a:visited
+{
+    color: #337ab7;
+}
+
+a:focus,
+a:hover
+{
+    color: #337ab7;
+    text-decoration: underline;
+}
+
+.navbar
+{
+    border: 0;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a
+{
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover
+{
+/*    color: #2b6498;*/
+    color: #337ab7;
+    text-decoration: underline;
+}
+
+.jumbotron, #site-footer
+{
+    background-color: #07002F;
+    border: 0;
+}
+
+.breadcrumb
+{
+    background-color: inherit;
+    padding: 0;
+}
+
+    .breadcrumb > .active
+    {
+        color: #3e6396;
+    }
+
+.browsenav
+{
+    font-size: .9em;
+    background: transparent;
+    color: inherit;
+    padding-bottom: .3em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+    .browsenav .previous
+    {
+        float: left;
+        width: 49%;
+        text-align: right;
+    }
+
+    .browsenav .next
+    {
+        float: right;
+        width: 50%;
+        text-align: left;
+    }
+
+    .article-header-date
+    {
+        clear: both;
+        padding-top: .5em;
+        display: block;
+    }
+
+.article-header-date, .article-header-info
+{
+    color: #3e6396;
+}
+
+.content-body p img
+{
+    max-width: 100%;
+}
+
+hr
+{
+    border-top: 1px solid #2b6498;
+}
+
+pre
+{
+    border: 0;
+    border-radius: 0;
+}
+
+#content pre
+{
+    border-left: 5px solid #2b6498;
+}
+
+.pagination > li > a
+{
+    background-color: #07002F;
+    border: 1px solid #07002F;
+}
+
+/* isso commenting system styling */
+.comments h2
+{
+    color: #3e6396;
+}
+
+#isso-thread > h4
+{
+    color: #2b6498 !important;
+}
+
+.isso-postbox > .form-wrapper > .auth-section .post-action > input
+{
+    border: 1px solid #2b6498 !important;
+    background-color: #2b6498 !important;
+}
+
+.post-action > input:hover
+{
+    border: 1px solid #3e6396 !important;
+    background-color: #3e6396 !important;
+}
