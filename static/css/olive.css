@@ -191,6 +191,11 @@ pre
     background-color: #5C6448 !important;
 }
 
+.isso-postbox .auth-section
+{
+    padding-bottom: 1em;
+}
+
 /* -- fix bootstrap conflict with Pygments -- */
 /* https://alcidanalytics.com/p/pygments-bootstrap-css-conflict */
 .highlight pre
