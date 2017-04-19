@@ -125,7 +125,7 @@ pre
     padding: 0;
     overflow: auto;
     white-space: nowrap;
-    white-space: pre-wrap; /* Chrome */
+/*    white-space: pre-wrap; */ /* Chrome */
 }
 
 #content .label
@@ -177,6 +177,12 @@ pre
 {
     border: 1px solid #838F67 !important;
     background-color: #838F67 !important;
+    color: #FFF !important;
+}
+
+.isso-postbox > .form-wrapper > .auth-section .post-action > input:hover
+{
+    background-color: #5C6448 !important;
 }
 
 .post-action > input:hover
