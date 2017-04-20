@@ -49,6 +49,11 @@ a:hover
     text-decoration: underline;
 }
 
+.navbar-default .navbar-toggle .icon-bar
+{
+    background-color: #FFF;
+}
+
 .jumbotron, #site-footer
 {
     background-color: #5C6448;
