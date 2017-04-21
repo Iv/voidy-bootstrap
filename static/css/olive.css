@@ -124,13 +124,17 @@ pre
     border-radius: 0;
 }
 
-#content pre
+#content pre, #content pre code
 {
     border-left: none;
     padding: 0;
     overflow: auto;
-    white-space: nowrap;
-/*    white-space: pre-wrap; */ /* Chrome */
+    white-space: pre;
+}
+
+#content pre code
+{
+    padding: .3em;
 }
 
 #content .label
