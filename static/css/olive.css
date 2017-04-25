@@ -225,3 +225,9 @@ pre
 {
     color: #FFF;
 }
+
+#site-footer a
+{
+    color: #FFF;
+    text-decoration: underline;
+}
