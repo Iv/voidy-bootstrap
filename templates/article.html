@@ -85,7 +85,16 @@
     {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
 	{{ article.content }}
   </div>
-  
+
+{% if article.related_posts %}
+    <h2>Related posts</h2>
+    <ul>
+    {% for related_post in article.related_posts %}
+        <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
   {% for file in CUSTOM_ARTICLE_FOOTERS %}
     {% include "includes/" + file %}
   {% endfor %}
