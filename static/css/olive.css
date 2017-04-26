@@ -64,12 +64,12 @@ a:hover
 .breadcrumb
 {
     background-color: inherit;
-    padding: 0;
+    padding-left: 0;
 }
 
     .breadcrumb > .active
     {
-        color: #3e6396;
+        color: #838F67;
     }
 
 .browsenav
