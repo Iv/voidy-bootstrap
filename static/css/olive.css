@@ -153,6 +153,18 @@ pre
         width: 3em;
     }
 
+.relatedposts h2
+{
+    font-size: 24px;
+    color: #5C6448;
+}
+
+.relatedposts li
+{
+    font-size: .8em;
+    line-height: 1.42857143;  /* calculation by bootstrap itself */
+}
+
 .pagination > li > a
 {
     background-color: #838F67;
