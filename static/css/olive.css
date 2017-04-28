@@ -108,7 +108,8 @@ a:hover
     color: #838F67;
 }
 
-.content-body p img
+.content-body p img,
+.content-body .content-image
 {
     max-width: 100%;
 }
