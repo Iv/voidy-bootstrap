@@ -30,6 +30,11 @@ a:hover
 /*    border-bottom: 1px solid #39414F;*/
 }
 
+#content p a
+{
+    text-decoration: underline;
+}
+
 .navbar
 {
     border: 0;
