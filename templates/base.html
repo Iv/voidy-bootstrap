@@ -35,8 +35,8 @@
 
     <title>{% block title %}{{ SITENAME }}{% if SITETAG %} - {{ SITETAG|escape }}{% endif %}{% endblock %}</title>
 
-    {% if not SKIP_DEFAULT_CSS %}   
-      {% if BOOTSTRAP_STYLESHEET %} 
+    {% if not SKIP_DEFAULT_CSS %}
+      {% if BOOTSTRAP_STYLESHEET %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ BOOTSTRAP_STYLESHEET }}" />
       {% else %}
         <link rel="stylesheet"
@@ -49,6 +49,8 @@
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
             crossorigin="anonymous">
     {% endif %}
+
+     <link href='https://fonts.googleapis.com/css?family=Gudea:400,400italic|Alegreya+SC' rel='stylesheet' type='text/css'>
 
     {% for url in STYLESHEET_URLS %}
       <link rel="stylesheet" href="{{ url }}" />
