@@ -63,6 +63,14 @@ a:hover
     text-decoration: underline;
 }
 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover
+{
+    color: #FFF;
+    background-color: #5C6448;
+}
+
 .navbar-default .navbar-toggle .icon-bar
 {
     background-color: #FFF;
