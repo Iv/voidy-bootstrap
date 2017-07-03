@@ -80,7 +80,7 @@
     {% endif %}
     {% if article.image %}
       <img class="article-image img-responsive" alt="article header image" itemprop="image"
-		   src="{{ SITEURL }}/images/{{ article.image }}" />
+		   src="{{ article.image }}" />
     {% endif %}
     {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
 	{{ article.content }}
