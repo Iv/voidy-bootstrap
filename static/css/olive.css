@@ -153,6 +153,7 @@ pre
     padding: 0;
     overflow: auto;
     white-space: pre;
+    font-family: "Hack", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 #content pre code

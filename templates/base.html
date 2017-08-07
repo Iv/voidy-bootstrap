@@ -5,6 +5,7 @@
        'bootstrap': 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap',
        'jquery'   : 'https://cdnjs.cloudflare.com/ajax/libs/jquery',
        'awesome'  : 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome',
+       'hack'     : '//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css',
        } %}
   {% endif %}
   <head>
@@ -51,6 +52,7 @@
     {% endif %}
 
      <link href='https://fonts.googleapis.com/css?family=Gudea:400,400italic|Alegreya+SC' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" />
 
     {% for url in STYLESHEET_URLS %}
       <link rel="stylesheet" href="{{ url }}" />
@@ -74,7 +76,7 @@
     {% endif %}
 
     {% if HIGHLIGHTJS %}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     {% endif %}
