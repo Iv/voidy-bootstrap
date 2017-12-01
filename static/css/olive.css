@@ -161,6 +161,12 @@ pre
     padding: .3em;
 }
 
+#content .edit
+{
+    font-size: .8em;
+    color: #838F67;
+}
+
 #content .label
 {
     background-color: #5C6448;
