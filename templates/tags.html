@@ -3,11 +3,11 @@
 {% block content_body %}
 <h1 class="direct-heading"><i class="fa fa-tags fa-fw fa-lg"></i>Tags</h1>
 <ul class="direct-list tags-tag-cloud">
-{% for tag in tag_cloud %}
-<li class="tag-{{ tag.1 }}">
-  <a href="{{ SITEURL }}/{{ tag.0.url }}">
-	<i class="fa fa-tag fa-fw fa-lg"></i>{{ tag.0 }}
-  </a>
+{% for tag, articles in tags|sort %}
+<li class="tag-{{ tag }}">
+  <a href="{{ SITEURL }}/{{ tag.url }}">
+	<i class="fa fa-tag fa-fw fa-lg"></i>{{ tag }}
+  </a> ({{ articles|count }})
 </li>
 {% endfor %}
 </ul>
