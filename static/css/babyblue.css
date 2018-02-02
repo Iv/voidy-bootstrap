@@ -1,15 +1,16 @@
 body
 {
-    font-family: 'Gudea', 'Gill Sans';
+    font-family: 'Open Sans', 'Gill Sans';
 }
 
-h3 { font-family: 'Alegreya SC', 'Garamond', 'Georgia'; font-weight: normal}
-h2 { font-family: 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
-h1 { font-family: 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
+h3 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia'; font-weight: normal}
+h2 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
+h1 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
 
 body, .navbar-default, .navbar
 {
     background-color: #96b7ff;
+    background-color: #FFF;
     color: #333;
 }
 
@@ -24,19 +25,22 @@ body, select, input, textarea
     background-color: #FFF;
 }
 
+#content header
+{
+    padding-bottom: 1em;
+}
+
 a,
 a:visited
 {
-    color: #5C6448;
-/*    border-bottom: 1px dotted #39414F;*/
+    color: #96b7ff;
 }
 
 a:focus,
 a:hover
 {
-    color: #5C6448;
+    color: #96b7ff;
     text-decoration: underline;
-/*    border-bottom: 1px solid #39414F;*/
 }
 
 #content p a
@@ -52,7 +56,7 @@ a:hover
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a
 {
-    color: #FFF;
+    color: #96b7ff;
     text-decoration: none;
 }
 
@@ -68,7 +72,7 @@ a:hover
 .navbar-default .navbar-nav > .active > a:hover
 {
     color: #FFF;
-    background-color: #5C6448;
+    background-color: #96b7ff;
 }
 
 .navbar-default .navbar-toggle .icon-bar
@@ -78,7 +82,8 @@ a:hover
 
 .jumbotron, #site-footer
 {
-    background-color: #5C6448;
+    background-color: #96b7ff;
+    background-color: #FFF;
     color: #FFF !important;
     border: 0;
 }
@@ -169,7 +174,13 @@ pre
 
 #content .label
 {
-    background-color: #5C6448;
+    background-color: #96b7ff;
+}
+
+td
+{
+    vertical-align: top;
+    padding-right: 2em;
 }
 
 .highlighttable
@@ -186,7 +197,7 @@ pre
 .relatedposts h2
 {
     font-size: 24px;
-    color: #5C6448;
+    color: #96b7ff;
 }
 
 .relatedposts li
@@ -204,19 +215,19 @@ pre
 
 .pagination > li > a:hover
 {
-    color: #5C6448;
+    color: #96b7ff;
 }
 
 .pagination > .active > span
 {
-    background-color: #5C6448;
-    border: 1px solid #5C6448;
+    background-color: #96b7ff;
+    border: 1px solid #96b7ff;
 }
 
 /* isso commenting system styling */
 .comments h2
 {
-    color: #5C6448;
+    color: #96b7ff;
 }
 
 #isso-thread > h4
@@ -233,13 +244,13 @@ pre
 
 .isso-postbox > .form-wrapper > .auth-section .post-action > input:hover
 {
-    background-color: #5C6448 !important;
+    background-color: #96b7ff !important;
 }
 
 .post-action > input:hover
 {
-    border: 1px solid #5C6448 !important;
-    background-color: #5C6448 !important;
+    border: 1px solid #96b7ff !important;
+    background-color: #96b7ff !important;
 }
 
 .isso-postbox .auth-section
