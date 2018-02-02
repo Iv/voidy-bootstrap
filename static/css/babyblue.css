@@ -7,13 +7,19 @@ h3 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia'; font-weight
 h2 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
 h1 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
 
-body, .navbar-default, .navbar
+body
 {
-    background-color: #96b7ff;
     background-color: #FFF;
     color: #333;
 }
 
+.navbar-default, .navbar
+{
+    background-color: #96b7ff;
+    color: #333;
+}
+
+/* we like off-black for text */
 /* we like off-black for text */
 body, select, input, textarea
 {
@@ -56,7 +62,7 @@ a:hover
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a
 {
-    color: #96b7ff;
+    color: #FFF;
     text-decoration: none;
 }
 
@@ -72,7 +78,7 @@ a:hover
 .navbar-default .navbar-nav > .active > a:hover
 {
     color: #FFF;
-    background-color: #96b7ff;
+    background-color: #7690c9;
 }
 
 .navbar-default .navbar-toggle .icon-bar
@@ -82,10 +88,14 @@ a:hover
 
 .jumbotron, #site-footer
 {
-    background-color: #96b7ff;
     background-color: #FFF;
     color: #FFF !important;
     border: 0;
+}
+
+#site-footer
+{
+    background-color: #96b7ff;
 }
 
 .breadcrumb
