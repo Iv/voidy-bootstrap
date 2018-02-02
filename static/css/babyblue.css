@@ -9,13 +9,13 @@ h1 { font-family: 'Open Sans', 'Alegreya SC', 'Garamond', 'Georgia' ; font-weigh
 
 body
 {
-    background-color: #FFF;
+    background-color: #FFF4DE;
     color: #333;
 }
 
 .navbar-default, .navbar
 {
-    background-color: #96b7ff;
+    background-color: #617FBF;
     color: #333;
 }
 
@@ -28,7 +28,7 @@ body, select, input, textarea
 
 #content
 {
-    background-color: #FFF;
+    background-color: #FFF4DE;
 }
 
 #content header
@@ -45,7 +45,7 @@ a:visited
 a:focus,
 a:hover
 {
-    color: #96b7ff;
+    color: #8BA5DC;
     text-decoration: underline;
 }
 
@@ -78,7 +78,7 @@ a:hover
 .navbar-default .navbar-nav > .active > a:hover
 {
     color: #FFF;
-    background-color: #7690c9;
+    background-color: #8BA5DC;
 }
 
 .navbar-default .navbar-toggle .icon-bar
@@ -88,14 +88,14 @@ a:hover
 
 .jumbotron, #site-footer
 {
-    background-color: #FFF;
+    background-color: #FFF4DE;
     color: #FFF !important;
     border: 0;
 }
 
 #site-footer
 {
-    background-color: #96b7ff;
+    background-color: #617FBF;
 }
 
 .breadcrumb
@@ -293,4 +293,15 @@ td
 {
     color: #FFF;
     text-decoration: underline;
+}
+
+#site-colophon
+{
+    text-align: left;
+    padding-top: 0;
+}
+
+#site-colophon .fa
+{
+    padding-right: .5em;
 }
