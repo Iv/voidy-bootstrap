@@ -1,4 +1,8 @@
+{% if JUMBOTRON_BACKGROUNDIMAGE %}
+    <div class="jumbotron jumbotronbackground" style="background-image: url('{{ JUMBOTRON_BACKGROUNDIMAGE }}');" id="overview">
+{% else %}
 	<div class="jumbotron" id="overview">
+{% endif %}
 	  <div class="container">
 		<h1><a href="{{ SITEURL }}/">{{ SITELOGO }}</a></h1>
         {% if SITESUBTITLE %}
