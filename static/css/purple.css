@@ -62,6 +62,7 @@ a:hover
 .navbar
 {
     border: 0;
+    border-radius: 0;
 }
 
 .navbar-default .navbar-brand,
@@ -83,7 +84,7 @@ a:hover
 .navbar-default .navbar-nav > .active > a:hover
 {
     color: #FFF;
-    background-color: #6954B0;
+    background-color: #0da39b;
 }
 
 .navbar-default .navbar-toggle .icon-bar
