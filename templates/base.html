@@ -4,7 +4,7 @@
     {% set CDN_DICT = {
        'bootstrap': 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap',
        'jquery'   : 'https://cdnjs.cloudflare.com/ajax/libs/jquery',
-       'awesome'  : 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome',
+       'awesome'  : 'https://cdn.jsdelivr.net/npm/fork-awesome',
        'hack'     : 'https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css',
        } %}
   {% endif %}
@@ -46,8 +46,8 @@
               crossorigin="anonymous" />
       {% endif %}
       <link rel="stylesheet"
-            href="{{CDN_DICT['awesome']}}/4.7.0/css/font-awesome.min.css"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            href="{{CDN_DICT['awesome']}}@1.0.11/css/fork-awesome.min.css"
+            integrity="sha256-MGU/JUq/40CFrfxjXb5pZjpoZmxiP2KuICN5ElLFNd8="
             crossorigin="anonymous">
     {% endif %}
 
