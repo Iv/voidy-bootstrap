@@ -37,8 +37,8 @@
               crossorigin="anonymous" />
       {% endif %}
       <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
             crossorigin="anonymous">
     {% endif %}
       
@@ -84,7 +84,7 @@
 		  <span class="icon-bar"></span>
 		</button>
 		<a class="navbar-brand" href="{{ SITEURL }}/" rel="home">
-          <i class="fa fa-home fa-fw fa-lg"> </i> {{ HOME_LABEL|default('') }}</a>
+          <i class="fas fa-home fa-fw fa-lg"> </i> {{ HOME_LABEL|default('') }}</a>
        </div>
 
       <div class="collapse navbar-collapse" id="main-navbar-collapse">
@@ -111,7 +111,7 @@
           {% if FEED_ALL_ATOM %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"
                    type="application/atom+xml" rel="alternate">
-                <i class="fa fa-rss fa-fw fa-lg"></i> </a></li>
+                <i class="fas fa-rss fa-fw fa-lg"></i> </a></li>
           {% endif %}
         </ul> <!-- /nav -->
       </div> <!-- /navbar-collapse -->
@@ -176,7 +176,7 @@
         &nbsp;&bull;&nbsp; Theme based on
         <a href="http://www.voidynullness.net/page/voidy-bootstrap-pelican-theme/"
            target="_blank">VoidyBootstrap</a> by 
-        <a href="http://www.robertiwancz.com/"
+        <a href="http://voidynullness.net"
            target="_blank">RKI</a>  
         </p>
       </address><!-- /colophon  -->
