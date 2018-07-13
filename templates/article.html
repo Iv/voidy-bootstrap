@@ -96,6 +96,16 @@
     </ul>
   </div>
 {% endif %}
+{% if article.similar_posts %}
+  <div class="relatedposts">
+    <h2>Related posts</h2>
+    <ul>
+    {% for similar_post in article.similar_posts %}
+        <li><a href="{{ SITEURL }}/{{ similar_post.url }}">{{ similar_post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endif %}
 
   {% for file in CUSTOM_ARTICLE_FOOTERS %}
     {% include "includes/" + file %}
