@@ -18,11 +18,11 @@
     {% if article %}
         <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
     {% endif%}
-	{% block meta_other %}{% endblock %}
-    {% if OPEN_GRAPH_FB_APP_ID %}
-    <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
-    {% endif %}
-	{% block open_graph %}
+    {% block meta_other %}{% endblock %}
+        {% if OPEN_GRAPH_FB_APP_ID %}
+            <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+        {% endif %}
+    {% block open_graph %}
       {% if OPEN_GRAPH %}
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="{{ SITENAME|striptags|e }}"/>
