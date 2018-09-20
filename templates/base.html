@@ -15,6 +15,9 @@
     <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}" />
     <meta name="author" content="{{ AUTHOR }}" />
     <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
+    {% if article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
+    {% endif%}
 	{% block meta_other %}{% endblock %}
     {% if OPEN_GRAPH_FB_APP_ID %}
     <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
