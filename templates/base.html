@@ -15,7 +15,7 @@
     {% if article and article.summary %}
         <meta name="description" content="{{ article.summary|striptags }}"/>
     {% else %}
-        <meta name="description" content="{{ SITE_SUMMARY }}"/>
+        <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}"/>
     {% endif%}
     <meta name="author" content="{{ AUTHOR }}" />
     <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
