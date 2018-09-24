@@ -12,11 +12,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% if article and article.summary %}
-        <meta name="description" content="{{ article.summary|striptags }}"/>
-    {% else %}
-        <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}"/>
-    {% endif%}
+    <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}"/>
     <meta name="author" content="{{ AUTHOR }}" />
     <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
     {% if article %}
