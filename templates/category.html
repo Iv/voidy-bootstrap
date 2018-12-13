@@ -30,7 +30,7 @@
 </ol>
 
 {% if CATEGORY_FEED_ATOM %}
-<p><a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}"><i class="fa fa-rss-square fa-fw fa-lg"></i> Feed for category '{{ category }}'</a></p>
+<p><a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(slug=category.slug) }}"><i class="fa fa-rss-square fa-fw fa-lg"></i> Feed for category '{{ category }}'</a></p>
 {% endif %}
 {% endblock content_header %}
 
