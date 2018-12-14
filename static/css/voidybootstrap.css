@@ -49,12 +49,7 @@ p.standfirst
     color: #999;
 }
 
-.social-links
-{
-    font-size: 18px;
-}
-
-.category-links
+.social-links, .category-links, .feed-links
 {
     font-size: 18px;
 }
