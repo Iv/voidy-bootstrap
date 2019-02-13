@@ -44,13 +44,13 @@
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ BOOTSTRAP_STYLESHEET }}" />
       {% else %}
         <link rel="stylesheet"
-              href="{{CDN_DICT['bootstrap']}}/3.4.0/css/bootstrap.min.css"
-              integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+"
+              href="{{CDN_DICT['bootstrap']}}/3.4.1/css/bootstrap.min.css"
+              integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
               crossorigin="anonymous" />
       {% endif %}
       <link rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-            integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
             crossorigin="anonymous">
     {% endif %}
 
@@ -79,8 +79,8 @@
     {% endif %}
 
     {% if HIGHLIGHTJS %}
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/darcula.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/darcula.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     {% endif %}
 
@@ -210,8 +210,8 @@
     <!-- javascript -->
     {% if not SKIP_DEFAULT_JS %}   
     <script src="{{CDN_DICT['jquery']}}/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="{{CDN_DICT['bootstrap']}}/3.4.0/js/bootstrap.min.js"
-            integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+    <script src="{{CDN_DICT['bootstrap']}}/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
             crossorigin="anonymous"></script>
     {% endif %}
 
