@@ -83,6 +83,16 @@ a:hover
     border: 0;
 }
 
+/* Eliminate space above and below the main content */
+.jumbotron {
+    margin-bottom: 0;
+}
+
+#site-footer {
+    margin-top: 0;
+}
+
+/* Crumblepath subnavigation */
 .breadcrumb
 {
     background-color: inherit;
