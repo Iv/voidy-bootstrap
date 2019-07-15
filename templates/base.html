@@ -3,7 +3,7 @@
   {% if not CDN_DICT %}
     {% set CDN_DICT = {
        'bootstrap': 'https://stackpath.bootstrapcdn.com/bootstrap',
-       'jquery'   : 'https://code.jquery.com',
+       'jquery'   : 'https://cdn.jsdelivr.net/npm/jquery@3.4.1',
        'awesome'  : 'https://cdn.jsdelivr.net/npm/fork-awesome',
        'hack'     : 'https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css',
        } %}
@@ -208,8 +208,8 @@
     {% include 'includes/disqus_script.html' %}
 
     <!-- javascript -->
-    {% if not SKIP_DEFAULT_JS %}   
-    <script src="{{CDN_DICT['jquery']}}/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    {% if not SKIP_DEFAULT_JS %}
+    <script src="{{CDN_DICT['jquery']}}/dist/jquery.min.js" crossorigin="anonymous"></script>
     <script src="{{CDN_DICT['bootstrap']}}/3.4.1/js/bootstrap.min.js"
             integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
             crossorigin="anonymous"></script>
