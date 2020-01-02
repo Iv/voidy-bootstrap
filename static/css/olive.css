@@ -1,0 +1,285 @@
+body
+{
+    font-family: 'Gudea', 'Gill Sans';
+}
+
+h3 { font-family: 'Alegreya SC', 'Garamond', 'Georgia'; font-weight: normal}
+h2 { font-family: 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
+h1 { font-family: 'Alegreya SC', 'Garamond', 'Georgia' ; font-weight: normal;}
+
+body, .navbar-default, .navbar
+{
+    background-color: #838F67;
+    color: #333;
+}
+
+/* we like off-black for text */
+body, select, input, textarea
+{
+    color: #333;
+}
+
+#content
+{
+    background-color: #FFF;
+}
+
+a,
+a:visited
+{
+    color: #5C6448;
+/*    border-bottom: 1px dotted #39414F;*/
+}
+
+a:focus,
+a:hover
+{
+    color: #5C6448;
+    text-decoration: underline;
+/*    border-bottom: 1px solid #39414F;*/
+}
+
+#content p a
+{
+    text-decoration: underline;
+}
+
+.navbar
+{
+    border: 0;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a
+{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover
+{
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover
+{
+    color: #FFF;
+    background-color: #5C6448;
+}
+
+.navbar-default .navbar-toggle .icon-bar
+{
+    background-color: #FFF;
+}
+
+.jumbotron, #site-footer
+{
+    background-color: #5C6448;
+    color: #FFF !important;
+    border: 0;
+}
+
+/* Eliminate space above and below the main content */
+.jumbotron {
+    margin-bottom: 0;
+}
+
+#site-footer {
+    margin-top: 0;
+}
+
+/* Crumblepath subnavigation */
+.breadcrumb
+{
+    background-color: inherit;
+    padding-left: 0;
+}
+
+    .breadcrumb > .active
+    {
+        color: #838F67;
+    }
+
+.browsenav
+{
+    font-size: .9em;
+    background: transparent;
+    color: inherit;
+    padding-bottom: .3em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+    .browsenav .previous
+    {
+        float: left;
+        width: 49%;
+        text-align: right;
+    }
+
+    .browsenav .next
+    {
+        float: right;
+        width: 50%;
+        text-align: left;
+    }
+
+    .article-header-date
+    {
+        clear: both;
+        padding-top: .5em;
+        display: block;
+    }
+
+.article-header-date, .article-header-info
+{
+    color: #838F67;
+}
+
+.content-body p img,
+.content-body .content-image img
+{
+    max-width: 100%;
+}
+
+hr
+{
+    border-top: 1px solid #838F67;
+}
+
+pre
+{
+    border: 0;
+    border-radius: 0;
+}
+
+#content pre, #content pre code
+{
+    border-left: none;
+    padding: 0;
+    overflow: auto;
+    white-space: pre;
+    font-family: "Hack", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+#content pre code
+{
+    padding: .3em;
+}
+
+#content .edit
+{
+    font-size: .8em;
+    color: #838F67;
+}
+
+#content .label
+{
+    background-color: #5C6448;
+}
+
+.highlighttable
+{
+    table-layout: fixed;
+    width: 100%;
+}
+
+    .linenos
+    {
+        width: 3em;
+    }
+
+.relatedposts h2
+{
+    font-size: 24px;
+    color: #5C6448;
+}
+
+.relatedposts li
+{
+    font-size: .8em;
+    line-height: 1.42857143;  /* calculation by bootstrap itself */
+}
+
+.pagination > li > a
+{
+    background-color: #838F67;
+    color: #FFF;
+    border: 1px solid #838F67;
+}
+
+.pagination > li > a:hover
+{
+    color: #5C6448;
+}
+
+.pagination > .active > span
+{
+    background-color: #5C6448;
+    border: 1px solid #5C6448;
+}
+
+/* isso commenting system styling */
+.comments h2
+{
+    color: #5C6448;
+}
+
+#isso-thread > h4
+{
+    color: #838F67 !important;
+}
+
+.isso-postbox > .form-wrapper > .auth-section .post-action > input
+{
+    border: 1px solid #838F67 !important;
+    background-color: #838F67 !important;
+    color: #FFF !important;
+}
+
+.isso-postbox > .form-wrapper > .auth-section .post-action > input:hover
+{
+    background-color: #5C6448 !important;
+}
+
+.post-action > input:hover
+{
+    border: 1px solid #5C6448 !important;
+    background-color: #5C6448 !important;
+}
+
+.isso-postbox .auth-section
+{
+    padding-bottom: 1em;
+}
+
+/* -- fix bootstrap conflict with Pygments -- */
+/* https://alcidanalytics.com/p/pygments-bootstrap-css-conflict */
+.highlight pre
+{
+    white-space: pre;
+    border-radius: inherit;
+    display: inherit;
+    background-color: inherit;
+    border: inherit;
+    color: inherit;
+}
+
+/* fix conflict with other stylesheets */
+.highlight .m { margin: inherit; }
+/* -- end of fix -- */
+
+#sidebar h4
+{
+    color: #FFF;
+}
+
+#site-footer a
+{
+    color: #FFF;
+    text-decoration: underline;
+}

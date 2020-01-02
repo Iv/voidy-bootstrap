@@ -1,33 +1,42 @@
-.navbar {
-	margin-bottom: 0px;
+.navbar
+{
+    margin-bottom: 0px;
 }
 
-@media screen and (min-width: 768px) {
-  .jumbotron {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+@media screen and (min-width: 768px)
+{
+    .jumbotron
+    {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
 
-img {
+img
+{
     padding: 10px 0px 26px;
 }
 
-#content {
-    padding-right: 50px; 
+#content
+{
     line-height: 26px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
-#content p {
-      margin-bottom: 24px;
-  }
+#content p
+{
+    margin-bottom: 16px;
+}
 
-p.standfirst {
+p.standfirst
+{
     font-size: 18px;
     font-weight: 700;
 }
 
-#site-colophon {
+#site-colophon
+{
     font-size: 12px;
     margin-bottom: 0px;
     padding-top: 20px;
@@ -35,48 +44,62 @@ p.standfirst {
     text-align: center;
 }
 
-.article-header-date, .article-header-info {
-	color: #999;
+.article-header-date, .article-header-info
+{
+    color: #999;
 }
 
-.social-links {
-	font-size: 18px;
+.social-links, .category-links, .feed-links
+{
+    font-size: 18px;
 }
 
-.category-links {
-	font-size: 18px;
+.tags-list
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    list-style: none;
 }
 
-.tag-1 {
-	font-size: 14pt;
+.tag-1
+{
+    font-size: 14pt;
 }
-.tag-2 {
-	font-size: 12pt;
+.tag-2
+{
+    font-size: 12pt;
 }
-.tag-3 {
-	font-size: 10pt;
+.tag-3
+{
+    font-size: 10pt;
 }
-.tag-4 {
-	font-size: 8pt;
+.tag-4
+{
+    font-size: 8pt;
 }
 
-.tag-cloud {
+.tag-cloud
+{
     line-height: 16px;
 }
 
-.article-tag-list {
+.article-tag-list
+{
     padding-top: 15px;
 }
 
-.home-top {
-	margin-top: 20px;
-}
-
-#sidebar h4 {
+.home-top
+{
     margin-top: 20px;
 }
 
-#site-footer {
+#sidebar h4
+{
+    margin-top: 20px;
+}
+
+#site-footer
+{
     background: #eee;
     border-top: 1px dotted #999;
     margin-top: 40px;
@@ -86,7 +109,8 @@ p.standfirst {
 /*
  * My preference for code blocks is no line wraps and horizontal scrolling.
  */
-#content pre {
+#content pre
+{
     border-left: 5px solid #999;
     overflow-x: auto;
     padding-left: 20px;
@@ -95,6 +119,20 @@ p.standfirst {
     white-space: pre;
 }
 
-dt {
-  margin-top: 10px;
+dt
+{
+    margin-top: 10px;
+}
+
+kbd
+{
+    font-size: 80%;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    border-radius: 2px;
+    color: #212529;
+    background: #e6e6e6;
+    white-space: no-wrap;
+    box-shadow: inset 0 -1px 0 rgba(27, 31, 35, 0.12);
+    padding: .2rem .4rem;
 }

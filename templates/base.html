@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
+  {% if not CDN_DICT %}
+    {% set CDN_DICT = {
+       'bootstrap': 'https://stackpath.bootstrapcdn.com/bootstrap',
+       'jquery'   : 'https://cdn.jsdelivr.net/npm/jquery@3.4.1',
+       'awesome'  : 'https://cdn.jsdelivr.net/npm/fork-awesome',
+       'hack'     : 'https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css',
+       } %}
+  {% endif %}
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}" />
-    <meta name="author" content="{{ AUTHOR }}" />
     <meta name="yandex-verification" content="4aeded59d1427c19" />
-	{% block meta_other %}{% endblock %}
-    {% if OPEN_GRAPH_FB_APP_ID %}
-    <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
-    {% endif %}
-	{% block open_graph %}
+    <meta name="description" content="{% block metadesc %}{{ DEFAULT_METADESC|e }}{% endblock %}"/>
+    <meta name="author" content="{{ AUTHOR }}" />
+    <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
+    {% if article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
+    {% endif%}
+    {% block meta_other %}{% endblock %}
+        {% if OPEN_GRAPH_FB_APP_ID %}
+            <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+        {% endif %}
+    {% block open_graph %}
       {% if OPEN_GRAPH %}
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="{{ SITENAME|striptags|e }}"/>
@@ -28,21 +40,24 @@
 
     <title>{% block title %}{{ SITENAME }}{% if SITETAG %} - {{ SITETAG|escape }}{% endif %}{% endblock %}</title>
 
-    {% if not SKIP_DEFAULT_CSS %}   
-      {% if BOOTSTRAP_STYLESHEET %} 
+    {% if not SKIP_DEFAULT_CSS %}
+      {% if BOOTSTRAP_STYLESHEET %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ BOOTSTRAP_STYLESHEET }}" />
       {% else %}
         <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              href="{{CDN_DICT['bootstrap']}}/3.4.1/css/bootstrap.min.css"
+              integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
               crossorigin="anonymous" />
       {% endif %}
       <link rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+            href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
             crossorigin="anonymous">
     {% endif %}
       
+
+     <link href='https://fonts.googleapis.com/css?family=Gudea:400,400italic|Alegreya+SC' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font/build/web/hack.css" />
+
     {% for url in STYLESHEET_URLS %}
       <link rel="stylesheet" href="{{ url }}" />
     {% endfor %}
@@ -54,10 +69,21 @@
       <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ css }}" />
     {% endfor %}
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" integrity="sha384-FFgGfda92tXC8nCNOxrCQ3R8x1TNkMFqDZVQdDaaJiiVbjkPBXIJBx0o7ETjy8Bh" crossorigin="anonymous"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
-    <![endif]-->
+    {% if STYLE_COLOUR %}
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="{{ STYLE_COLOUR }}" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="{{ STYLE_COLOUR }}">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    {% endif %}
+
+    {% if HIGHLIGHTJS %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/styles/darcula.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    {% endif %}
 
     <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON|default('favicon.ico') }}" />
     {% if CUSTOM_HTML_HEAD %}
@@ -105,9 +131,11 @@
             {% endfor %}
             <li class="divider"></li>
           {% endif %}
+          {% if not SKIP_ARCHIVE_LINK %}
             <li class="{% block archive_active %}{% endblock %}">
               <a href="{{ SITEURL }}/{{ ARCHIVES_URL|default('archives.html') }}">Archives</a>
             </li>
+          {% endif %}
           <li class="divider"></li>
           {% if FEED_ALL_ATOM %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"
@@ -188,10 +216,10 @@
     {% include 'includes/disqus_script.html' %}
 
     <!-- javascript -->
-    {% if not SKIP_DEFAULT_JS %}   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    {% if not SKIP_DEFAULT_JS %}
+    <script src="{{CDN_DICT['jquery']}}/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="{{CDN_DICT['bootstrap']}}/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
             crossorigin="anonymous"></script>
     {% endif %}
 

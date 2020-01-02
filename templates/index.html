@@ -4,6 +4,8 @@
 {% include "includes/" + CUSTOM_INDEX_META|default("index_meta.html") ignore missing %}
 {% endblock %}
 
+{% block metadesc %}{{ SITE_SUMMARY }}{% endblock %}
+
 {% block custom_header %}
 {% if CUSTOM_HEADER_INDEX %}
 {% include "includes/" + CUSTOM_HEADER_INDEX %}

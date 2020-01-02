@@ -28,6 +28,10 @@
 {% endif %}
     <li class="active">{{ tag }}</li>
 </ol>
+
+{% if TAG_FEED_ATOM %}
+<p><a href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(slug=tag.slug) }}"><i class="fa fa-rss-square fa-fw fa-lg"></i> Feed for tag '{{ tag }}'</a></p>
+{% endif %}
 {% endblock content_header %}
 
 {% block article %}
