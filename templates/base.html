@@ -49,15 +49,42 @@
               integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
               crossorigin="anonymous" />
       {% endif %}
+    {% endif %}
+
+    {% if FONT_AWESOME_CDN_LINK %}
       <link rel="stylesheet"
+<<<<<<< HEAD
             href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
             crossorigin="anonymous">
+=======
+        {% for key,value in FONT_AWESOME_CDN_LINK.items() %}
+            {{ key }}="{{ value }}"
+        {% endfor %}
+      />
+>>>>>>> voidy/master
     {% endif %}
       
 
      <link href='https://fonts.googleapis.com/css?family=Gudea:400,400italic|Alegreya+SC' rel='stylesheet' type='text/css'>
      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font/build/web/hack.css" />
 
+    {% for url_dict in STYLESHEET_URL_LINKS %}
+      <link rel="stylesheet"
+        {% for key,value in url_dict.items() %}
+            {{ key }}="{{ value }}"
+        {% endfor %}
+      />
+    {% endfor %}
+
+    {% for url_dict in HEAD_URL_LINKS %}
+      <link
+        {% for key,value in url_dict.items() %}
+            {{ key }}="{{ value }}"
+        {% endfor %}
+      />
+    {% endfor %}
+
+    {# deprecated #}
     {% for url in STYLESHEET_URLS %}
       <link rel="stylesheet" href="{{ url }}" />
     {% endfor %}

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 *.swp
 *~
 tags
+=======
+*~
+.idea/
+.vscode/
+*.pyc
+*.directory
+>>>>>>> voidy/master

@@ -1,7 +1,7 @@
 VoidyBootstrap
 ==============
 
-*Version 2.2*
+*Version 2.3*
 
 A `Bootstrap 3 <http://getbootstrap.com>`_ blog theme for the
 `Pelican <http://getpelican.com>`_ static site generator.
@@ -63,6 +63,12 @@ The following should be set in ``pelicanconf.py``::
   SITESUBTITLE ='Sub-title that goes underneath site name in jumbotron.'
   SITETAG = "Text that's displayed in the title on the home page."
 
+  FONT_AWESOME_CDN_LINK = {
+      'href': 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+      'integrity': 'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp',
+      'crossorigin': 'anonymous'
+  }
+
   # Extra stylesheets, for bootstrap overrides or additional styling.
   STYLESHEET_FILES = ("pygment.css", "voidybootstrap.css",)
 
@@ -73,15 +79,14 @@ The following should be set in ``pelicanconf.py``::
   # Default sidebar template. Omit this setting for single column mode without sidebar.
   SIDEBAR = "sidebar.html"
 
-  SOCIAL = (('Google+', 'http://plus.google.com/userid',
-           'fab fa-google-plus-square fa-fw fa-lg'),
-          ('Twitter', 'https://twitter.com/username', 
+  SOCIAL = (
+          ('Twitter', 'https://twitter.com/username',
            'fab fa-twitter-square fa-fw fa-lg'),
-          ('LinkedIn', 'http://linkedin-url', 
+          ('LinkedIn', 'https://linkedin-url',
            'fab fa-linkedin fa-fw fa-lg'),
-          ('BitBucket', 'http://bitbucket.org/username', 
-           'fa fa-bitbucket-square fa-fw fa-lg'),
-          ('GitHub', 'http://github.com/username',
+          ('BitBucket', 'https://bitbucket.org/username',
+           'fab fa-bitbucket fa-fw fa-lg'),
+          ('GitHub', 'https://github.com/username',
            'fab fa-github-square fa-fw fa-lg'),
           )
 
@@ -221,15 +226,30 @@ optional.
 ``BOOTSTRAP_STYLESHEET``
   Bootstrap CSS file to use instead of default, as described above.
 
+``FONT_AWESOME_CDN_LINK``
+  Dict with data for Font Awesome CDN link.  See example above.
+  Only 'href' is strictly required.
+
 ``STYLESHEET_URLS``
-  A list of URLS for additional stylesheets that should be pulled in by
+  Deprecated.  Use ``STYLESHEET_URL_LINKS`` instead.
+
+``STYLESHEET_URL_LINKS``
+
+  A list of dicts with data for generating stylesheets links in HEAD by
   the ``base.html`` template, like CSS files from a CDN.  Useful for adding
-  the bootstrap theme CSS, for example.
+  the bootstrap theme CSS, for example.  Each dict should at least specify a
+  'href' key.  All key/value pairs in the dict will be added as attribute/value
+  to a link element in the page HEAD.
+
+``HEAD_URL_LINKS``
+
+  Like ``STYLESHEET_URL_LINKS`` but without the ``rel="stylesheet"``, so can
+  be used for adding arbitrary custom links in page HEAD.
 
 ``STYLESHEET_FILES``
   An list of filenames (relative to the ``/theme/css/`` directory) for
   additional stylesheets that should be pulled in by the ``base.html``
-  template (after any STYLESHEET_URLS entries).
+  template.
 
 ``STYLE_COLOUR``
   The main colour of the theme, to be hinted at supported browsers (mainly
@@ -238,7 +258,7 @@ optional.
 ``SKIP_DEFAULT_CSS`` 
   No default CSS files at all will be used if this is set to True.  In this
   case the only stylesheets used will be those specified in
-  ``STYLESHEET_FILES`` and ``STYLESHEET_URLS``.  This setting is provided
+  ``STYLESHEET_FILES`` and ``STYLESHEET_URL_LINKS``.  This setting is provided
   to give more control over which specific Bootstrap (and Font Awesome) CSS
   files are used (i.e. it allows a specific version to be configured
   through settings).  But it means for things to work properly at a minimum
